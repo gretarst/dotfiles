@@ -15,7 +15,7 @@ Plug 'vim-scripts/vim-js-pretty-template'
 
 call plug#end()
 
-
+set termguicolors
 set omnifunc=syntaxcomplete#Complete
 syntax on
 color dracula
