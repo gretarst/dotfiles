@@ -22,15 +22,13 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
-      lspconfig.ocamllsp.setup({})
+      lspconfig.ocamllsp.setup({
+        capabilities = capabilities,
+      })
       lspconfig.gopls.setup({})
       lspconfig.svelte.setup({
         capabilities = capabilities,
       })
-      vim.keymap.set("n", "<leader>ch", "<cmd>Lspsaga hover_doc<CR>", { desc = "document hover" })
-      vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "definition" })
-      vim.keymap.set("n", "<leader>cr", vim.lsp.buf.references, { desc = "reference" })
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code actions" })
     end,
   },
 }

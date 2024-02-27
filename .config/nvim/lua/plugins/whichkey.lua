@@ -7,12 +7,11 @@ return {
   end,
   opts = {
     defaults = {
-      ["<leader>s"] = { name = "+save/quit" },
-      ["<leader>f"] = { name = "+file/find" },
       ["<leader>o"] = { name = "+org-mode" },
+      ["<leader>g"] = { name = "+git" },
       ["<leader>b"] = { name = "+buffer" },
+      ["<leader>s"] = { name = "+search" },
       ["<leader>c"] = { name = "+code" },
-      ["<leader>w"] = { name = "+window" },
     },
   },
   config = function(_, opts)
