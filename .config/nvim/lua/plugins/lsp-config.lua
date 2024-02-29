@@ -29,6 +29,7 @@ return {
       lspconfig.svelte.setup({
         capabilities = capabilities,
       })
+      lspconfig.clangd.setup({})
     end,
   },
 }

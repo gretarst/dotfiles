@@ -43,6 +43,10 @@ vim.keymap.set("n", "<leader>sf", function()
   require("telescope.builtin").find_files()
 end, { desc = "search files" })
 
+vim.keymap.set("n", "<leader>sg", function()
+  require("telescope.builtin").git_files()
+end, { desc = "search git files" })
+
 vim.keymap.set("n", "<leader>/", function()
   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
     previewer = false,
