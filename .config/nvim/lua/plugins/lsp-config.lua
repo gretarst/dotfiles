@@ -29,6 +29,9 @@ return {
       lspconfig.svelte.setup({
         capabilities = capabilities,
       })
+      lspconfig.gleam.setup({
+        capabilities = capabilities
+      })
       lspconfig.clangd.setup({})
     end,
   },
