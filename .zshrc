@@ -138,9 +138,13 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # haskell 
 [ -f "/Users/gretar.magnusson/.ghcup/env" ] && source "/Users/gretar.magnusson/.ghcup/env" # ghcup-env
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/usr/local/sbin:$PATH"
-
+# p10k 
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# export PATH="/usr/local/sbin:$PATH"
+ 
+# php
 export PATH="/usr/local/opt/php@8.2/bin:$PATH"
 export PATH="/usr/local/opt/php@8.2/sbin:$PATH"
+
+# emacs
+export PATH="$HOME/.config/emacs/bin:$PATH"
