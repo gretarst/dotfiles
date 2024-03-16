@@ -148,3 +148,5 @@ export PATH="/usr/local/opt/php@8.2/sbin:$PATH"
 
 # emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
