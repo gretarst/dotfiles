@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="minimal"
+ZSH_THEME="geoffgarside"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,7 +74,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm macos brew iterm2 zsh-syntax-highlighting tmux)
+plugins=(git nvm macos brew tmux)
 
 zstyle ':omz:plugins:nvm' lazy yes
 
@@ -149,4 +149,3 @@ export PATH="/usr/local/opt/php@8.2/sbin:$PATH"
 # emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
