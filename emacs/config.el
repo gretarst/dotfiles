@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Iosevka" :size 16))
+(setq doom-font (font-spec :family "Iosevka" :size 18))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -31,7 +31,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -73,5 +73,39 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(use-package gleam-mode
-  :load-path "~/clone/gleam-mode")
+(after! projectile
+  (setq projectile-project-search-path '("~/Projects/Personal", "~/Projects/Work", "~/Projects/Courses"))
+  (projectile-add-known-project "~/Projects/Personal/advent-of-code")
+  (projectile-add-known-project "~/Projects/Personal/stockwright")
+  (projectile-add-known-project "~/Projects/Personal/monkey-interpreter-go")
+  (projectile-add-known-project "~/Projects/Work/future-plc/bordeaux")
+  (projectile-add-known-project "~/Projects/Courses/rustlings")
+  (projectile-add-known-project "~/Projects/Work/future-plc/fte")
+  (projectile-add-known-project "~/Projects/Work/future-plc/freyr")
+  (projectile-add-known-project "~/Projects/Work/future-plc/champagne")
+  (projectile-add-known-project "~/Projects/Courses/codecrafters-git-rust")
+  (projectile-add-known-project "~/Projects/Courses/dune_exercises")
+  ;; add more projects here
+  )
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+(defun set-almost-maximized ()
+  "Set the new frame to 90% of available screen width and height and center it."
+  (let* ((display-width (display-pixel-width))
+         (display-height (display-pixel-height))
+         (new-width (truncate (* 0.9 display-width)))
+         (new-height (truncate (* 0.9 display-height)))
+         ;; Calculate the center position
+         (x-pos (truncate (/ (- display-width new-width) 2)))
+         (y-pos (truncate (/ (- display-height new-height) 2))))
+    ;; Set the frame size and position
+    (set-frame-size (selected-frame) new-width new-height t)
+    (set-frame-position (selected-frame) x-pos y-pos)))
+
+(set-almost-maximized)
+
+(add-to-list 'load-path
+             "/Users/gretar.magnusson/.opam/default/share/emacs/site-lisp")
+(require 'ocp-indent)
